@@ -64,27 +64,23 @@
 	</div> -->
 <script>
 $('#button').click(function(){
-	mytable = $('<table></table>').attr({ id: "basicTable" });
+	$('#box').empty();
+	mytable = $('<table>').attr({ id: "basicTable" });
 	var rows = Number($("#rowcount").val());
 	var cols = Number($("#columncount").val());
 	var tr = [];
 	for (var i = 0; i < rows; i++) {
-		var row = $('<tr></tr>').attr({ class: ["row"] }).appendTo(mytable);
+		var row = $('<tr>').attr({ class: ["row"] }).appendTo(mytable);
 		for (var j = 0; j < cols; j++) {
-			$('<td></td>').text("").appendTo(row); 
+			$('<td>').text("").appendTo(row); 
 		}
 		 		 
 	}
 	console.log("TTTTT:"+mytable.html());
 	mytable.appendTo("#box");	       
   
-});
+})
 </script>
-<!-- <script>
-	$('#button').on('click', function () {
-		$('#column').fadeToggle(200);
-	});
-	
-</script> -->
+
 </body>
 </html>
