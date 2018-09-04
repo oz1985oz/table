@@ -72,13 +72,20 @@ $('#button').click(function(){
 	for (var i = 0; i < rows; i++) {
 		var row = $('<tr>').attr({ class: ["row"] }).appendTo(mytable);
 		for (var j = 0; j < cols; j++) {
-			$('<td>').text("").appendTo(row); 
+			var td = $('<td>').text("").appendTo(row);
+			td.attr({ class: "_" + j + i })
 		}
-		 		 
 	}
+	
 	console.log("TTTTT:"+mytable.html());
 	mytable.appendTo("#box");	       
   
+	$('td').click(function(e){
+		console.log(e);
+		$(this).toggleClass('sitTaken');
+		var sitstaken = $('.sitTaken').length;
+		$('#sum').text(sitstaken*100)
+	})
 })
 </script>
 
